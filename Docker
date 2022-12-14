@@ -1,0 +1,58 @@
+1. What is Docker?
+Docker is an open-source lightweight containerization technology. It allows you to automate the deployment of applications in lightweight and portable containers 
+and you can easly develop and shipping and deploy it.
+
+2.What is Container?
+What is a container in a Docker?
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code,
+runtime, system tools, system libraries and settings.
+
+3. What is Docker Image ?
+The Docker image help to create Docker containers. You can create the Docker image with the build command. Due to this, it creates a container 
+that starts when it begins to run. Every docker images are stored in the Docker registry.
+
+4. What is Docker Registry ?
+Docker’s registry is called Docker hub, which allows you to store images privately or publically. In Docker hub, you can store millions of images.
+Public registry and private registry
+
+5.What is Docker Engine ?
+
+6. What command you should see all running containers ?
+CMD: docker ps -a
+
+7.Write command to stop container ?
+CMD: docker stop container-name
+
+8.What command to run the image as container?
+CMD: docker -d -it -p 80:80 --name <container-Name> <image-Name>
+
+9.What is dockerFile ?
+A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
+Commands: FROM, RUN, LABEL, COPY, ADD, EXPOSE
+
+10. What is Docker Engine ?
+Docker daemon or Docker engine represents the server. The docker daemon and the clients should be run on the same or remote host, 
+which can communicate through command-line client binary and full RESTful API.
+
+11.What is docker swarm ?
+A Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join 
+together in a cluster. The activities of the cluster are controlled by a swarm manager, and machines that have joined the cluster are referred to as nodes.
+
+12. How can you monitor docker in production environment ?
+Docker states and Docker Events are used to monitoring docker in the production environment.
+
+13. What are the states of docker container ?
+Running, pause, Restarting, Exit
+
+14. Where docker volume is stored ?
+/var/lib/docker/volumes
+
+15. What are the some docker important commmands ?
+docker pull--> Download image
+docker push --> upload image to registry
+docker run --> To create container from docker image
+docker exec --> To login container
+docker images --> Show docker images in local hub
+
+16. How does communicate between docker daemon and docker client ?
+To communicate through Socket.IO, REST API, TCP
