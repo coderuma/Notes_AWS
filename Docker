@@ -56,3 +56,38 @@ docker images --> Show docker images in local hub
 
 16. How does communicate between docker daemon and docker client ?
 To communicate through Socket.IO, REST API, TCP
+
+17. What are the commands to control Docker with systemd ?
+systemctl start/stop docker
+service docker start/stop
+
+18. How does use JSON instead of YAML compose file?
+docker-compose -f docker-compose.json up
+
+19. What is the command to push new image to docker registry ?
+docker push myorg/img
+
+20. What is Docker-compose ?
+Docker compose is tool to help to run multiple container in single file and that compose file created by YAML or JSON file.
+
+21. Can you lose data when container exist ?
+No, any data that your application writes to disk get stored in container. The file system for the contain persists even after the container halts.
+
+22. What are the diffrent kinds of volumes ?
+Bind mount--> To connect external storage device which means outsied of docker.
+Volume Mount--> To mount file system
+Tmfs mount--> To defualt connect to contaier memory.
+
+23. What is docker trusted registry ?
+Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker. You install it behind your firewall so that you can securely 
+store and manage the Docker images you use in your applications.
+
+24. What is Docker Namespace ?
+Docker uses a technology called namespaces to provide the isolated workspace called the container. 
+When you run a container, Docker creates a set of namespaces for that container. These namespaces provide a layer of isolation.
+
+25. What are the 3 components of Docker Architucture ?
+Client--> Docker provides Command Line Interface tools to the client to interact with Docker daemon.
+Docker Host --> It contains container, images, and Docker daemon. It offers a complete environment to execute and run your application.
+Registry--> A Docker registry is a storage and distribution system for named Docker images. The same image might have multiple 
+different versions, identified by their tags.
