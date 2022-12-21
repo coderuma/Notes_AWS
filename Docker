@@ -1,93 +1,91 @@
-1. What is Docker?
-Docker is an open-source lightweight containerization technology. It allows you to automate the deployment of applications in lightweight and portable containers 
-and you can easly develop and shipping and deploy it.
+Docker Interview Questions
 
-2.What is Container?
-What is a container in a Docker?
-A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code,
-runtime, system tools, system libraries and settings.
 
-3. What is Docker Image ?
-The Docker image help to create Docker containers. You can create the Docker image with the build command. Due to this, it creates a container 
-that starts when it begins to run. Every docker images are stored in the Docker registry.
+1.	What is Docker?
+Docker is open source centralize platform for shipping, developing and run applications. Docker enable you to separate your application from infrastructure so you can deliver software quickly. Docker component such as Docker client, Docker server, Docker machine, Docker hub, Docker compose.
 
-4. What is Docker Registry ?
-Docker’s registry is called Docker hub, which allows you to store images privately or publically. In Docker hub, you can store millions of images.
-Public registry and private registry
+2.	What is Container?
+Container is light-weight package of your application code with specific version of programming language and libraries to run software services.
 
-5.What is Docker Engine ?
+3.	What is Docker-image?
+Docker image is template of docker container, and it is very similar to snapshot of image. Single image can be contained multiple containers for different environment. 
 
-6. What command you should see all running containers ?
+4.	What is Docker Registry?
+Docker’s registry is called Docker hub, which allows you to store images privately or publicly. In Docker hub, you can store millions of images. Public registry and private registry.
+
+5.	What is Docker File?
+Docker file is text-document that contains all the commands could call the command line to assemble image. It consists of set of instruction and followed by arguments. 
+
+6.	What command you should see all running containers?
 CMD: docker ps -a
 
-7.Write command to stop container ?
+7.	What is command used to stop the container?
 CMD: docker stop container-name
 
-8.What command to run the image as container?
-CMD: docker -d -it -p 80:80 --name <container-Name> <image-Name>
+8.	What command to run image as container?
+CMD: docker run -d  -it  --name <container-name>  image-name
 
-9.What is dockerFile ?
-A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
-Commands: FROM, RUN, LABEL, COPY, ADD, EXPOSE
+9.	What is Docker network and types?
+Docker networking allows you to attach a container to as many networks as you like.
+Bridge  It is default driver for the container and used to communicate with outside docker inside docker, another container.
+Host  Used for when don’t need network drive between host and container.
+None  Disable all network.
 
-10. What is Docker Engine ?
-Docker daemon or Docker engine represents the server. The docker daemon and the clients should be run on the same or remote host, 
-which can communicate through command-line client binary and full RESTful API.
-
-11.What is docker swarm ?
-A Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join 
-together in a cluster. The activities of the cluster are controlled by a swarm manager, and machines that have joined the cluster are referred to as nodes.
-
-12. How can you monitor docker in production environment ?
+10.	What are the states of docker container?
+Running  Running stage
+Restart  To stop docker container
+Pause  To pause the container              Exit  Exit stage
+11.	How can you monitor docker in production environment?
 Docker states and Docker Events are used to monitoring docker in the production environment.
 
-13. What are the states of docker container ?
-Running, pause, Restarting, Exit
+12.	What is Docker client and Docker daemon and Docker host?
+Docker client  Docker client uses commands and REST API to communicate with docker server. Docker pull, docker push, docker run, docker build
+Docker daemon  Runs in docker host operating system that is responsible for running container and managing docker services.
+Docker-Host Docker host is providing environment to run applications. It contains docker daemon, container, images, network, storage.
 
-14. Where docker volume is stored ?
-/var/lib/docker/volumes
-
-15. What are the some docker important commmands ?
+13.	What are the commands important in Docker environment?
 docker pull--> Download image
 docker push --> upload image to registry
 docker run --> To create container from docker image
 docker exec --> To login container
 docker images --> Show docker images in local hub
 
-16. How does communicate between docker daemon and docker client ?
+14.	How does communicate between Docker-daemon and docker client?
 To communicate through Socket.IO, REST API, TCP
 
-17. What are the commands to control Docker with systemd ?
+15.	What is Docker volume?
+Docker volume is file systems are mounted on container to prepare data generated by running container. This allows user to backup and share the data between containers.
+Bind  To connect external storage device which means outside docker area.
+Volume  To mount file system within docker area.
+Tmfs  To default connect to container memory. It is temporary file system.
+
+16.	Where docker volume is stored?
+/var/lib/docker/volume
+
+17.	What does the command push new image to docker registry?
+CMD: docker push image-name
+
+18.	What are the commands to control the docker with system?
 systemctl start/stop docker
-service docker start/stop
 
-18. How does use JSON instead of YAML compose file?
-docker-compose -f docker-compose.json up
-
-19. What is the command to push new image to docker registry ?
-docker push myorg/img
-
-20. What is Docker-compose ?
-Docker compose is tool to help to run multiple container in single file and that compose file created by YAML or JSON file.
-
-21. Can you lose data when container exist ?
+19.	Can you lose data after exits container?
 No, any data that your application writes to disk get stored in container. The file system for the contain persists even after the container halts.
 
-22. What are the diffrent kinds of volumes ?
-Bind mount--> To connect external storage device which means outsied of docker.
-Volume Mount--> To mount file system
-Tmfs mount--> To defualt connect to contaier memory.
+20.	What is docker trust registry?
+Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker. You install it behind your firewall so that you can securely store and manage the Docker images you use in your applications.
 
-23. What is docker trusted registry ?
-Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker. You install it behind your firewall so that you can securely 
-store and manage the Docker images you use in your applications.
+21.	What is Docker Namespace?
+Docker uses a technology called namespaces to provide the isolated workspace called the container. When you run a container, Docker creates a set of namespaces for that container. These namespaces provide a layer of isolation.
 
-24. What is Docker Namespace ?
-Docker uses a technology called namespaces to provide the isolated workspace called the container. 
-When you run a container, Docker creates a set of namespaces for that container. These namespaces provide a layer of isolation.
+22.	What is Docker-swarm?
+A Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join in a cluster. The activities of the cluster are controlled by a swarm manager, and machines that have joined the cluster are referred to as nodes.
 
-25. What are the 3 components of Docker Architucture ?
-Client--> Docker provides Command Line Interface tools to the client to interact with Docker daemon.
-Docker Host --> It contains container, images, and Docker daemon. It offers a complete environment to execute and run your application.
-Registry--> A Docker registry is a storage and distribution system for named Docker images. The same image might have multiple 
-different versions, identified by their tags.
+23.	What is Docker-Compose?
+Docker compose is tool to help to run multiple containers in single file and that compose file created by YAML or JSON file.
+
+24.	How does use JSON instead of YAML file in compose?
+docker-compose -f docker-compose.json up
+
+
+
+
