@@ -1,0 +1,126 @@
+Git Interview Questions 
+
+1.	What is Version Control System?
+Version control system is repository of files that is tracking and managing every change in files so that you can recall specific version later or anytime. 
+Local version control system  It is in your local computer in which every file changes stored in local system.
+Centralize version control system  It is server as act main repository which stores every version of code.
+Distributed version control system  Every local machine would have one copy of repository, once changes done from local repository after process to remote repository.
+
+2.	What is Git?
+Git is open-source distributed version control system and tracking and managing every changes in source code and help to coordinate work among several people on project while tracking progress overtime. 
+
+3.	Different between Git and GitHub?
+Git is open-source distributed version control system and tracking and managing every change in source code and you can recall specific version at any time.
+GitHub is hosting platform that is provides web-based graphic interface. GitHub help to work together on project from anywhere. 
+
+4.	What is Git Repository?
+Git repository is place and track and save all changes made to the files in git project and that files either stored in local or remote repository. .git folder know as repository folder.
+
+5.	How can you initialize repository in git?
+CMD: git init command is to initialize empty repository after it will be auto create .git folder.
+
+6.	Define few git commands either function?
+Git config  Configure username and password
+Git add  add one or more files to staging area
+Git diff  view the change to the file
+Git init  Initialize the empty git repository
+Git commit  Commit changes to local repository
+
+7.	What is commit message and how can execute that?
+Commit command execute to move the files to local repository from staging area means, which is ready for commit stage.
+CMD: git commit -m
+
+8.	What is some Hosting repository?
+GitHub, Gitlab, Bitbucket
+9.	What is Git push command?
+PUSH command is used to push the content from local repository to remote repository.
+CMD: git push
+
+10.	What does Git pull command?
+Git pull command is used fetch and merge between local repository and remote repository. This is combination of two commands: git fetch and git merge.
+
+11.	Different between git fetch and git pull?
+Git fetch(clone): git fetch is only downloading your code from remote repository and it does nothing to integrate with remote repository.
+Git pull: Git pull command is used fetch and merge between local repository and remote repository. This is combination of two commands: git fetch and git merge.
+
+12.	What is merge conflict?
+Merger conflict is event when git is unable to resolve different in code between two commits.
+Git can automatically merge the change only when if the commit is different lines or branches. 
+
+13.	 How to resolve merge conflict?
+Open the conflict file and work require changes.
+After to use git add to move the staging process
+Final step you need to add new commit that help of commit command.
+
+14.	What is the process to revert a commit that has already been pushed and made public?
+Two processes:
+To remove or fixe the bad file in new commit and push into remote repository.
+Create a new commit to undo all changes and add with commit ID which commit want to back.
+CMD: git revert <commit-ID>
+
+15.	What is git  -bare repository?
+The bare repository does not contain any working or checked out copy of source files. A bare repository stores git revision history in the root folder of repository instead of in .git sub folder.
+CMD: git init -bare
+
+16.	Different from bare repo and standard repo?
+Standard repo will create in working directory with help of git init and it is create sub folder of .git
+Bare repo is does not contains any working or checked out copy of source files. A bare repository stores git revision history in the root folder of repository instead of in .git sub folder.
+
+17.	What is Git stash?
+Let’s say you want to switch branches to work on something else. The issue is you don’t want to make commit in uncompleted work, so you just want to get back to this point later. The solution here is Git stash.
+Git stash takes your modified tracked files and save it on a stack unfinished change that you can re-apply at any time. To go back to the work, you can use the stash pop.
+
+18.	What does git reset –mixed & git merger –abort?
+Git reset –mixed  undo changes made in the working directory and staging area.
+Git merge –abort  Helps to stop the merge process and return to the state before the merge begin. 
+
+19.	How do to you find a list of files that has been changed in particular commit?
+CMD: git diff-tree -r {commit-id}
+This command to get a list of file that has been changed in a particular commit.
+
+20.	Explain the different points when a merge can enter a conflict stage?
+a.	Starting merge process:
+If there are changes in the working directory of the stage area in current project, the merge will fail to start.
+In this case, conflicts happen due to pending changes that need to be stabilized using different git commands.
+b.	During Merge process:
+The failure during the merge process indicates that there’s a conflict between local branch and the branch being merged.
+In this case, git resolves as much as possible, but some things have to fix manually in conflict files.
+
+21.	What is different between fork, branch, Clone?
+Fork - A fork is a copy of a repository that you manage. Forks let you make changes to a project without affecting the original repository.
+Branch – Git branch is induvial project in repository. In several branches in repository, each branch can have different files and folders.
+Clone – Git clone refers to copy or clone remote a repository to local repository.
+
+22.	What is different between git merge & git rebase?
+Git merge  Merge is used to you can integrate with one branch other branch or copying content.
+Git rebase  Rebase is used to replace the commit from one branch to another branch.
+
+23.	What command used to fix a broken commit?
+To fix a broken commit in Git, you may use this “git commit –amend” commend, which is helps you combine the staged changes with previous commits instead of creating an entirely new commit.
+
+24.	How does git remote differ from git clone?
+Git remote  Git remote enables you to create, view, and delete connections to another repository. It’s used to refer remote repository or central repository.
+Git clone  Git clone enables you to create a clone copy of the target repository. 
+
+25.	What is stash drop?
+The git stash commend is used to remove a particular stash. If there’s a stash youre no longer using or want to remove a specific item of stash from the list. You can use the stash command.
+CMD: git stash drop stash@{}
+26.	IF you recover a deleted branch, what work is restored?
+The files that were stashed and saved in the stash index can be recovered. The files that were untracked will be lost. That’s why it’s a good idea to stage and commit your work or stash them.
+
+27.	What is different between reverting & resetting?
+Reverting  The revert command in git used to create a new commit that undoes the changes made in the previous commit.
+Resetting  Git reset is a command that is used to undo the local changes that have been made to git repository.
+
+28.	How can you discover if a branch has already been merged or not?
+Git branch –merged -> Gives the list of branches that have been merged into the current branch.
+Git branch –no-merge -> Gives the list of branches that have not been merged.
+
+29.	What does Git cherry-pick?
+The commend is enables you to pick up commits from a branch within a repository and apply it to another branch.
+This command is useful to undo changes when any commit is accidently made to wrong branch. Then, you can switch to the correct branch and use this command to cherry-pick the commit. 
+ 
+
+
+
+
