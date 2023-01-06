@@ -1,0 +1,44 @@
+Build Tool:
+Language  c, c++, java  compile
+Source code  compile  binary ( .class file) convert to jar or war file ( If any number of files)
+Tools:
+Maven
+Ant 
+
+Maven:
+Maven is a popular open-source build tool developed by the Apache Group to build, publish, and deploy several projects at once for better project management.
+It is converted to many numbers of class files or source code are converted to binary or jar file.
+Maven is tool used to convert source code to binary or jar file
+It is POM.xml  project object module
+A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project.
+
+Installation:
+apt-get install -y maven
+mvn –version
+
+Build phases:
+Validate  To check whether code is on proper way and configuration is proper way to check all process.
+Compile  To convert source code to .class file
+Test  To test our compile file
+Package  last 3 phase if successfully complete after that package will be process if any error while test package phase not execute. Combine our class file to jar or war file
+Install  After package phase competed that install phase install our application in our local maven repository. Note it not installed in remote server like tomcat.
+Deploy  
+
+
+Different ant & maven:
+Maven  Automatically download dependencies
+Ant  Manually download and copy to repository 
+
+Maven repository  maintained by Apache in that all depended on and plugins available 
+Local repository  Maven home directory
+
+
+
+
+By default path:
+ Src/main/  source code
+Src/test  junit tests
+Target/calss  build code (jar file)
+
+Mvn clean  to clean previews build and binary class and generate new pom file 
+
